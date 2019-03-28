@@ -42,3 +42,10 @@ myTriangle.bindPopup('<em><strong>USA TERRITORY</strong></em>')
 //  transparent: true, // reder as transparent if is not data
 //  attribution: 'NOAA, Iowa State University' // credits at bottom to the data provider
 //}).addTo(myMap) // change to yout map title
+
+//L.tileLayer.wms('https://nowcoast.noaa.gov/arcgis/services/nowcoast/radar_meteo_imagery_nexrad_time/MapServer/WMSServer', {
+  //layers: '1', // specify the number check from the ms.. link NOOA website, wmspage find the specific tag
+  //format: 'image/png',
+  //transparent: true,
+  //attribution: 'NOAA'
+//}).addTo(renameThis)
