@@ -1,10 +1,7 @@
-let myMap5 = L.map('map5').setView([32.18, -99.14], 5) // modify lat and long, zoom is good! might change tilte to some descriptive
-L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{ext}', {
-	attribution: 'Map tiles by <a href="http://stamen.com">Stamen Design</a>, <a href="http://creativecommons.org/licenses/by/3.0">CC BY 3.0</a> &mdash; Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-	subdomains: 'abcd',
-	minZoom: 1,
-	maxZoom: 16,
-	ext: 'jpg'
+let myMap5 = L.map('map5').setView([38.75, -102.83], 4.48) // modify lat and long, zoom is good! might change tilte to some descriptive
+L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
+	maxZoom: 17,
+	attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
 }).addTo(myMap5);
   //'https://cartodb-basemaps-{s}.global.ssl.fastly.net/dark_nolabels/{z}/{x}/{y}.png').addTo(myMap)
 //var OpenStreetMap_BlackAndWhite = L.tileLayer('https://tiles.wmflabs.org/bw-mapnik/{z}/{x}/{y}.png', {
@@ -30,12 +27,15 @@ L.tileLayer('https://stamen-tiles-{s}.a.ssl.fastly.net/watercolor/{z}/{x}/{y}.{e
 //myLine.bindPopup('<em>9h-43m distance between Baton Rouge,LA and Orlando,FL</em>') // figure it out how to create a line
 // myTriangle.bindPopup('<em><strong>USA TERRITORY</strong></em>')
 
-// L.tileLayer.wms('http://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi', {
-//   layers: 'nexrad-n0r-900913',
-//   format: 'image/png',
-//   transparent: true,
-//   attribution: 'NOAA, Iowa State University'
-// }).addTo(myMap5)
+L.tileLayer.wms('http://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi', {
+   layers: 'nexrad-n0r-900913',
+   format: 'image/png',
+   transparent: true,
+   attribution: 'NOAA, Iowa State University'
+ }).addTo(myMap5);
+L.esri.dynamicMapLayer({
+ 	url:'https://mesonet.agron.iastate.edu/cgi-bin/wms/us/wwa.cgi'
+}).addTo(myMap5) //added from try #6//
 L.esri.dynamicMapLayer({
   url: 'https://nowcoast.noaa.gov/arcgis/rest/services/nowcoast/radar_meteo_imagery_nexrad_time/MapServer'
-}).addTo(myMap5) // dinamic map layer: take the url on our SGI dollowing its standars  /* .notes..  */
+	}).addTo(myMap5) // dinamic map layer: take the url on our SGI dollowing its standars  /* .notes..  */
