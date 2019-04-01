@@ -34,8 +34,5 @@ L.tileLayer.wms('http://mesonet.agron.iastate.edu/cgi-bin/wms/nexrad/n0r.cgi', {
    attribution: 'NOAA, Iowa State University'
  }).addTo(myMap5);
 L.esri.dynamicMapLayer({
- 	url:'https://mesonet.agron.iastate.edu/cgi-bin/wms/us/wwa.cgi'
-}).addTo(myMap5) //added from try #6//
-L.esri.dynamicMapLayer({
   url: 'https://nowcoast.noaa.gov/arcgis/rest/services/nowcoast/radar_meteo_imagery_nexrad_time/MapServer'
 	}).addTo(myMap5) // dinamic map layer: take the url on our SGI dollowing its standars  /* .notes..  */
