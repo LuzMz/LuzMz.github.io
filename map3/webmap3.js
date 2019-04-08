@@ -1,4 +1,4 @@
-let stateMap = L.map('map3').setView([38.75, -102.83], 4.48)
+let stateMap = L.map('map3').setView([50.75, -110.83], 3.495) //modify scale and coordinates!! :)
 L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
  maxZoom: 17,
  attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
@@ -27,21 +27,21 @@ jQuery.getJSON(stateDemographicsUrl, function (data) { //from step6 takes the de
   //}
 //}//from step 9
   let stateStyle = function (feature) { //from step 9 bottom -this variable Featurewhe need to get the atributes of the current geojeson, if that data changes, it will be added to the map, and also added styles from a different state
-    let age = feature.properties.MED_AGE //objects conainig fruits example... the variable name is feature, and valid geojson variable is called propertis and its property is a column called med_age, and we can access from the geojson data, try to place it on the google console; if we change the artibute name just tyoe it "State_Name" from the file itself or the source of the data// get the current state's Median Age attribute
-    let stateColor = 'olive' // conditional estatements if statements if...then whe want to change the color previuosly stablished; if is less then the program does not do anything// let the initial color be a darker green
-    if ( age < 38 ) { stateColor = 'purple' } // if the state's median age is less than the average, color it a lighter green
+    let population = feature.properties.POPULATION //objects conainig fruits example... the variable name is feature, and valid geojson variable is called propertis and its property is a column called med_age, and we can access from the geojson data, try to place it on the google console; if we change the artibute name just tyoe it "State_Name" from the file itself or the source of the data// get the current state's Median Age attribute
+    let stateColor = 'blue' // conditional estatements if statements if...then whe want to change the color previuosly stablished; if is less then the program does not do anything// let the initial color be a darker green
+    if ( population > 6400000 ) { stateColor = 'red' } // if the state's median age is less than the average, color it a lighter green
     return {
       color: stateColor, //use the color variable above for the value
-      weight: .5,
-      fillOpacity: 0.2
+      weight: .3,
+      fillOpacity: 0.1
     }
   }//from step 9 bottom
   let onEachFeature = function (feature, layer) { //from 10 bottom
    let name = feature.properties.STATE_NAME
-   let age = feature.properties.MED_AGE //Choose a diferent variable for the assigment!!!!
-   layer.bindPopup('Median age of ' + name + ': ' + age + '<br>National average: 38') // combine variables name = 'Luke' -- y = 'Hello,' + name--- value showing in the pop up!!!
+   let population = feature.properties.POPULATION //Choose a diferent variable for the assigment!!!!
+   layer.bindPopup('Population of ' + name + ':' + population + '<br><em>National average: 6458430 on 2016<em>') // combine variables name = 'Luke' -- y = 'Hello,' + name--- value showing in the pop up!!!
  } //from 10 bottom
-  let stateGeojsonOptions = { //from 10 top
+  let stateGeojsonOptions = { //from 10 top   <em><strong>Baton Rouge, LA</strong></em>
     style: stateStyle,
     onEachFeature: onEachFeature
    } //from 10 top
