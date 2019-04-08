@@ -33,18 +33,19 @@ jQuery.getJSON(stateDemographicsUrl, function (data) { //from step6 takes the de
     return {
       color: stateColor, //use the color variable above for the value
       weight: .3,
-      fillOpacity: 0.1
-    }
-  }//from step 9 bottom
+      fillOpacity: 0.1,
+      stroke: 0.2
+      }
+    }//from step 9 bottom
   let onEachFeature = function (feature, layer) { //from 10 bottom
    let name = feature.properties.STATE_NAME
    let population = feature.properties.POPULATION //Choose a diferent variable for the assigment!!!!
    layer.bindPopup('Population of ' + name + ':' + population + '<br><em>National average: 6458430 on 2016<em>') // combine variables name = 'Luke' -- y = 'Hello,' + name--- value showing in the pop up!!!
- } //from 10 bottom
+   } //from 10 bottom
   let stateGeojsonOptions = { //from 10 top   <em><strong>Baton Rouge, LA</strong></em>
     style: stateStyle,
     onEachFeature: onEachFeature
-   } //from 10 top
+    } //from 10 top
   //let stateGeojsonOptions = { style: stateStyle } //mofify from step 10
   //optional
   //let stateStyle = { color:"green"}
