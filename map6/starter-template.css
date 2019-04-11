@@ -1,7 +1,11 @@
 body {
   padding-top: 3.5rem;
 }
-.starter-template{
-  padding: 3rem.5rem;
+.starter-template {
+  padding: 3rem 1.5rem;
   text-aling: center;
 }
+#map6 {
+  height: 890px;
+ }
+/* i deletec line 10 */
