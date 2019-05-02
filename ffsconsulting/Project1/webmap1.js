@@ -1,7 +1,8 @@
 let stateMap = L.map('map1').setView([31.1, -91.96], 7.5) //modify scale and coordinates!! :)
-L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png', {
- maxZoom: 17,
- attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, <a href="http://viewfinderpanoramas.org">SRTM</a> | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (<a href="https://creativecommons.org/licenses/by-sa/3.0/">CC-BY-SA</a>)'
+L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
+	subdomains: 'abcd',
+	maxZoom: 19
 }).addTo(stateMap)
 //optional:
 //let basemapUrl = 'hptt...."
