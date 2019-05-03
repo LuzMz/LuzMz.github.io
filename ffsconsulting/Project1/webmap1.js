@@ -4,10 +4,6 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
 	subdomains: 'abcd',
 	maxZoom: 19
 }).addTo(stateMap)
-//optional:
-//let basemapUrl = 'hptt...."
-//L.tilelayer (basemapUrl). add to (myMap)
-//let state demo.....
 let stateDemographicsUrl = 'https://geog4046.github.io/portfolio/data/us_state_demographics_ESRI_2010A.geojson'
 jQuery.getJSON(stateDemographicsUrl, function (data) { //from step6 takes the demographis url, finding the json value and taking that data and save it to the function data, ana allowed us to do something afterwords
 //  L.geoJSON(data).addTo(stateMap) //get geoJSON !!!
