@@ -12,7 +12,7 @@ jQuery.getJSON(currentMainRoadUrl, function (data) {
 })
 let onEachFeature = function (feature, layer) {
   layer.bindPopup('Existing Road, Marconi Dr')
-  statesLayer.addLayer(mortuarycomplexMap)
+  //statesLayer.addLayer(mortuarycomplexMap)
 }
 
 // let stateDemographicsUrl = 'https://geog4046.github.io/portfolio/data/us_state_demographics_ESRI_2010A.geojson'
