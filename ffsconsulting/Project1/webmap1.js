@@ -1,14 +1,14 @@
-let stateMap = L.map('map1').setView([30.015601, -90.097841], 16.5) //modify scale and coordinates!! :)
+let mortuarycomplexMap = L.map('map1').setView([30.015601, -90.097841], 16.5) //modify scale and coordinates!! :)
 L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
 	subdomains: 'abcd',
 	maxZoom: 19
-}).addTo(stateMap)
+}).addTo(mortuarycomplexMap)
 let stateDemographicsUrl = 'https://geog4046.github.io/portfolio/data/us_state_demographics_ESRI_2010A.geojson'
 jQuery.getJSON(stateDemographicsUrl, function (data) { //from step6 takes the demographis url, finding the json value and taking that data and save it to the function data, ana allowed us to do something afterwords
-//  L.geoJSON(data).addTo(stateMap) //get geoJSON !!!
+//  L.geoJSON(data).addTo(mortuarycomplexMap) //get geoJSON !!!
 //})
-  // L.geoJSON(data, { style: { color: 'green' } }).addTo(stateMap)
+  // L.geoJSON(data, { style: { color: 'green' } }).addTo(mortuarycomplexMap)
 //}) //changing color from step 7 this is an objetc within an objet variable= {property name= style: style options _{_color:place the variable name "green"}}
 //let stateStyle = { //added from step 8
   //color: 'green',
@@ -47,5 +47,5 @@ jQuery.getJSON(stateDemographicsUrl, function (data) { //from step6 takes the de
   //optional
   //let stateStyle = { color:"green"}
   // let geoJSONoptions = { style:{ color:"green"}} forn nesting variables
-  L.geoJSON(data, stateGeojsonOptions).addTo(stateMap)
+  L.geoJSON(data, stateGeojsonOptions).addTo(mortuarycomplexMap)
   }) // form last part of point 7
