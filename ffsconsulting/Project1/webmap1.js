@@ -15,7 +15,7 @@ let onEachMainRoad = function (feature, layer) {
   layer.bindPopup('Existing Road, Marconi Dr')
   //statesLayer.addLayer(mortuarycomplexMap)
 }
-let currentWetlandAreaUrl = 'https://luzmz.github.io/ffsconsulting/Project1/ExistinSiteConditions/current_main_road.geojson'
+let currentWetlandAreaUrl = 'https://luzmz.github.io/ffsconsulting/Project1/ExistinSiteConditions/WetlandArea.geojson'
 jQuery.getJSON(currentWetlandAreadUrl, function (data) {
   L.geoJSON(data, {
     // style: { color :"#ffff00", weight: 12, opacity: 0.5},
