@@ -5,14 +5,14 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
 	maxZoom: 19
 }).addTo(mortuarycomplexMap)
 // existing conditions
-let develomentalSiteAreaUrl = 'https://luzmz.github.io/ffsconsulting/Project1/ExistinSiteConditions/Site.geojson'
-jQuery.getJSON(develomentalSiteAreaUrl, function (data) {
-  L.geoJSON(data, {
-    style: { color:"#0000ff", weight: 1, opacity: 0.5,fillColor:"#ff8000",fillOpacity: 0.4},
-    onEachFeature: onEachdevelomentalSiteArea
-  }).addTo(mortuarycomplexMap)
-})
-let onEachdevelomentalSiteArea = function (feature, layer) {
+// let developmentalSiteAreaUrl = 'https://luzmz.github.io/ffsconsulting/Project1/ExistinSiteConditions/Site.geojson'
+// jQuery.getJSON(developmentalSiteAreaUrl, function (data) {
+//   L.geoJSON(data, {
+//     style: { color:"#0000ff", weight: 1, opacity: 0.5,fillColor:"#ff8000",fillOpacity: 0.4},
+//     onEachFeature: onEachdevelopmentalSiteArea
+//   }).addTo(mortuarycomplexMap)
+// })
+let onEachdevelopmentalSiteArea = function (feature, layer) {
   layer.bindPopup('Site of Interest')
 }
 let currentMainRoadUrl = 'https://luzmz.github.io/ffsconsulting/Project1/ExistinSiteConditions/current_main_road.geojson'
