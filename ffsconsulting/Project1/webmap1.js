@@ -7,6 +7,7 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
 let currentMainRoadUrl = 'https://luzmz.github.io/ffsconsulting/Project1/ExistinSiteConditions/current_main_road.geojson'
 jQuery.getJSON(currentMainRoadUrl, function (data) {
   L.geoJSON(data, {
+    style: {"stroke":"#ffff00","stroke-width":12,"stroke-opacity":".5"},
     onEachFeature: onEachMainRoad
   }).addTo(mortuarycomplexMap)
 })
