@@ -7,10 +7,10 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
 let currentMainRoadUrl = 'https://luzmz.github.io/ffsconsulting/Project1/ExistinSiteConditions/current_main_road.geojson'
 jQuery.getJSON(currentMainRoadUrl, function (data) {
   L.geoJSON(data, {
-    onEachFeature: onEachFeature
+    onEachFeature: onEachMainRoad
   }).addTo(mortuarycomplexMap)
 })
-let onEachFeature = function (feature, layer) {
+let onEachMainRoad = function (feature, layer) {
   layer.bindPopup('Existing Road, Marconi Dr')
   //statesLayer.addLayer(mortuarycomplexMap)
 }
