@@ -15,7 +15,17 @@ let onEachMainRoad = function (feature, layer) {
   layer.bindPopup('Existing Road, Marconi Dr')
   //statesLayer.addLayer(mortuarycomplexMap)
 }
-
+let currentWetlandAreaUrl = 'https://luzmz.github.io/ffsconsulting/Project1/ExistinSiteConditions/current_main_road.geojson'
+jQuery.getJSON(currentWetlandAreadUrl, function (data) {
+  L.geoJSON(data, {
+    // style: { color :"#ffff00", weight: 12, opacity: 0.5},
+    onEachFeature: onEachWetlandArea
+  }).addTo(mortuarycomplexMap)
+})
+let onEachWetlandArea = function (feature, layer) {
+  layer.bindPopup('Wetland')
+  //statesLayer.addLayer(mortuarycomplexMap)
+}
 // let stateDemographicsUrl = 'https://geog4046.github.io/portfolio/data/us_state_demographics_ESRI_2010A.geojson'
 // jQuery.getJSON(stateDemographicsUrl, function (data) {
   // let stateStyle = function (feature) { //from step 9 bottom -this variable Featurewhe need to get the atributes of the current geojeson, if that data changes, it will be added to the map, and also added styles from a different state
