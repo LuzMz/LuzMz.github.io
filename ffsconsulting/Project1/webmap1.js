@@ -1,4 +1,4 @@
-let mortuarycomplexMap = L.map('map1').setView([30.015601, -90.097841], 16.5) //modify scale and coordinates!! :)
+let mortuarycomplexMap = L.map('map1').setView([	30.0149, -90.0978], 16.5) //modify scale and coordinates!! :)
 L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
 	attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors &copy; <a href="https://carto.com/attributions">CARTO</a>',
 	subdomains: 'abcd',
